@@ -62,9 +62,13 @@ function handleFileOperation(thisParam, {target}) {
   
   // Get the file type
   let fileType = getFileType(input.name);
+
+  console.log("file: ", fileType);
+  console.log("file image: ", FILE_TYPE.IMAGE);
+  console.log("file video: ", FILE_TYPE.VIDEO);
   
   // Set the file name for preview
-  if(fileType !== FILE_TYPE.IMAGE || fileType !== FILE_TYPE.VIDEO || fileType !== FILE_TYPE.AUDIO) {
+  if((fileType !== FILE_TYPE.IMAGE) && (fileType !== FILE_TYPE.VIDEO) && (fileType !== FILE_TYPE.AUDIO)) {
     alert("File type not supported.");
     return;
   } else {
