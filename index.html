@@ -16,15 +16,18 @@
     <main>
       <!-- Header -->
       <header>
-        <div class="title">Pubninja &mdash; <span>File uploader</span></div>
+        <div class="title-container">
+          <div class="title-head">Pubninja &mdash;</div>
+          <div class="title-subhead">File uploader</div>
+        </div>
       </header>
 
       <!-- File preview and input container -->
       <div class="container">
         <div class="preview">
           <div>Preview: <span class="preview-filename">No file selected yet.</span></div>
-          <div class="preview-delete">
-            <img class="preview-delete-icon" src="./assets/trash.png" alt="delete preview" />
+          <div class="preview-delete" title="Delete preview">
+            <img class="preview-delete-icon" src="./assets/trash.png" alt="Delete preview" />
           </div>
         </div>
 
@@ -45,10 +48,12 @@
         <label class="file-capture">
           <input id="file-input" type="file" accept="image/*, video/*, audio/*" onchange="captureFile(event)" />
           <div class="file-capture-text-container">
-            <img class="file-capture-image" src="./assets/pva_icon.png" alt="upload icon" />
+            <img class="file-capture-image" src="./assets/bg_file_input.png" alt="upload icon" />
             <div class="file-capture-text">Upload file</div>
           </div>
         </label>
+
+        <div class="note">NOTE: Supports only images/videos/audio</div>
       </div>
     </main>
 

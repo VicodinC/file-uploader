@@ -108,15 +108,19 @@ function handleFileOperation(thisParam, {target}) {
 
   // To delete/remove the preview
   deletePreview.onclick = function() {
-    if(fileType === FILE_TYPE.IMAGE) {
-      resetToDefaultOtherFileTypes(imageSrc);
-      resetFileName(fileName, deletePreview);
-    } else if (fileType === FILE_TYPE.VIDEO) {
-      resetToDefaultOtherFileTypes(videoSrc);
-      resetFileName(fileName, deletePreview);
-    } else if (fileType === FILE_TYPE.AUDIO) {
-      resetToDefaultOtherFileTypes(audioSrc);
-      resetFileName(fileName, deletePreview);
+    if (confirm('Are you sure you want to delete this file?')) {
+      if(fileType === FILE_TYPE.IMAGE) {
+        resetToDefaultOtherFileTypes(imageSrc);
+        resetFileName(fileName, deletePreview);
+      } else if (fileType === FILE_TYPE.VIDEO) {
+        resetToDefaultOtherFileTypes(videoSrc);
+        resetFileName(fileName, deletePreview);
+      } else if (fileType === FILE_TYPE.AUDIO) {
+        resetToDefaultOtherFileTypes(audioSrc);
+        resetFileName(fileName, deletePreview);
+      }
+    } else {
+      return;
     }
   }
 }
