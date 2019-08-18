@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>File uploader</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="theme-color" content="#FFFFFF">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="./css/index.css">
+  </head>
+
+  <body>
+    <main>
+      <!-- Header -->
+      <header>
+        <div class="title">Pubninja &mdash; <span>File uploader</span></div>
+      </header>
+
+      <!-- File preview and input container -->
+      <div class="container">
+        <div class="preview">
+          <div>Preview: <span class="preview-filename">No file selected yet.</span></div>
+          <div class="preview-delete">
+            <img class="preview-delete-icon" src="./assets/trash.png" alt="delete preview" />
+          </div>
+        </div>
+
+        <div class="src-image-container">
+          <img class="src-image" alt="image" />
+        </div>
+        <div class="src-video-container">
+          <video class="src-video" controls playsInline webkit-playsinline="true">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="src-audio-container">
+          <audio class="src-audio" controls>
+            Your browser does not support the audio tag.
+          </audio>
+        </div>
+        
+        <label class="file-capture">
+          <input id="file-input" type="file" accept="image/*, video/*, audio/*" onchange="captureFile(event)" />
+          <div class="file-capture-text-container">
+            <img class="file-capture-image" src="./assets/pva_icon.png" alt="upload icon" />
+            <div class="file-capture-text">Upload file</div>
+          </div>
+        </label>
+      </div>
+    </main>
+
+    <!-- Scripts -->
+    <script src="./js/index.js"></script>
+  </body>
+</html>

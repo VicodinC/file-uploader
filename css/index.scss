@@ -1,0 +1,132 @@
+// Variables
+$primary-white: #FAFAFA;
+
+// Placeholders
+%color-white {
+  color: rgba(255, 255, 255, .9);
+}
+%bg-color-gradient {
+  background: linear-gradient(60deg, #fb4d24, #d44330);
+}
+
+// Mixins
+@mixin flex($align: null, $justify: null, $direction: null) {
+  display: flex;
+  align-items: $align;
+  justify-content: $justify;
+  flex-direction: $direction;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  margin: 0;
+  letter-spacing: 0.025rem;
+}
+
+header {
+  @extend %bg-color-gradient;
+  position: fixed;
+  top: 0;
+  height: 48px;
+  width: 100%;
+  padding: 16px;
+  .title {
+    @extend %color-white;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    > span {
+      @extend %color-white;
+      font-size: 12px;
+      font-weight: bold;
+    }
+  }
+}
+
+input[type="file"] {
+  display: none
+}
+
+.file-capture {
+  margin: 12px auto 0;
+  padding: 40px;
+  border: 2px dashed #DDD;
+  width: 340px;
+  text-align: center;
+  border-radius: 2px;
+  &-text-container {
+    @include flex(center, center);
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: bold;
+  }
+  &-image {
+    width: 72px;
+    filter: grayscale(1);
+    vertical-align: middle;
+  }
+  &-text {
+    padding-left: 12px;
+    color: #555;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: bold;
+  }
+}
+
+.container {
+  @include flex(flex-end, null, column);
+  padding-top: 48px;
+  width: 100%;
+  height: calc(100vh - 48px);
+}
+
+.preview {
+  @include flex(center, space-between);
+  padding: 12px 26px 24px;
+  width: 100%;
+  color: #333;
+  font-size: 14px;
+  &-filename {
+    color: #777;
+  }
+  &-delete {
+    display: none;
+    cursor: pointer;
+    &-icon {
+      width: 22px;
+      opacity: 0.9;
+    }
+  }
+}
+
+.src {
+  // When image/video/audio is first initiated
+  &-image,
+  &-video,
+  &-audio {
+    display: none;
+  }
+
+  &-image,
+  &-video,
+  &-audio {
+    max-width: 100%;
+    max-height: 100%;
+    &:focus {
+      outline: none;
+    }
+    &-container {
+      @include flex(center, center);
+      margin: 0 auto;
+      max-width: 340px;
+      max-height: 50%;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+  }
+}
