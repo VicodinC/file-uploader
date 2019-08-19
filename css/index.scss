@@ -34,6 +34,10 @@ img {
   vertical-align: middle;
 }
 
+main {
+  user-select: none;
+}
+
 header {
   @extend %bg-color-gradient;
   z-index: 1;
@@ -157,10 +161,10 @@ input[type="file"] {
     height: 20px;
     text-align: center;
     color: $grey-5;
-    font-size: 20px;
-    cursor: pointer;
+    font-size: 14px;
     background: #FFF;
     box-shadow: 0 0 2px 0 rgba(0,0,0,0.5);
+    cursor: pointer;
   }
 
 

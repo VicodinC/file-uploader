@@ -21,6 +21,13 @@ img {
   vertical-align: middle;
 }
 
+main {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
 header {
   z-index: 1;
   position: fixed;
@@ -195,11 +202,11 @@ input[type="file"] {
   height: 20px;
   text-align: center;
   color: #555;
-  font-size: 20px;
-  cursor: pointer;
+  font-size: 14px;
   background: #FFF;
   -webkit-box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.5);
           box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.5);
+  cursor: pointer;
 }
 
 .src-view {

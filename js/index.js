@@ -34,6 +34,32 @@ function getExtension(path) {
   return fullFileName.substring(fullFileName.lastIndexOf('.') + 1).toLowerCase();
 }
 
+
+// Check user media for video streaming
+(function checkUserMedia() {
+  navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || null;
+  
+  let video_audio_properties = {video: true, audio: true};
+  video_audio_properties = {video: {mandatory: {minWidth: 300, minHeight: 300, minFrameRate: 30}, optional: [{ minFrameRate: 60 }]}, audio: true};
+  let videoElement = document.createElement('video');
+
+  function onSuccess(stream) {
+    videoElement.src = window.URL.createObjectURL(stream);
+    videoElement.play();
+  }
+
+  function onError(error){
+    alert("Video capture error");
+    console.log("Video capture error: ", error.code);
+  }
+
+  if(navigator.getUserMedia != null) {
+    navigator.getUserMedia(video_audio_properties, onSuccess, onError);
+  } else {
+    alert("microphone and webcam API not supported");
+  }
+})();
+
 /**
  * @param  {HTMLInputElement} event
  */
