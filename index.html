@@ -2,11 +2,11 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>File uploader</title>
+    <title>PubNinja | File uploader</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="theme-color" content="#FFFFFF">
-    <link rel="shortcut icon" href="/favicon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="./assets/favicon.png" type="image/x-icon">
 
     <!-- CSS -->
     <link rel="stylesheet" href="./css/index.css">
@@ -45,32 +45,17 @@
         </div>
 
         <div class="container w-100">
-          <!-- File preview -->
-          <div class="preview">
-            <div class="preview-label">Preview: <span class="preview-filename">No file selected yet.</span></div>
-            <div class="preview-delete" title="Delete the file">
-              <img class="preview-delete-icon" src="./assets/trash.png" alt="Delete the file" />
-            </div>
-          </div>
-
           <!-- Image/Video/Audio containers -->
-          <div class="src-image-container">
-            <img class="src-image" alt="image" />
-          </div>
-          <div class="src-video-container">
-            <video class="src-video" controls playsInline webkit-playsinline="true">
-              Your browser does not support the video tag.
-            </video>
-          </div>
-          <div class="src-audio-container">
-            <audio class="src-audio" controls>
-              Your browser does not support the audio tag.
-            </audio>
-          </div>
+          <div class="src-wrapper"></div>
           
           <!-- Input to get the file -->
           <label class="file-capture">
-            <input id="file-input" type="file" accept="image/*, video/*, audio/*" onchange="captureFile(event)" />
+            <input
+              id="file-input"
+              type="file"
+              accept="image/*, video/*, audio/*"
+              onchange="captureFile(event)"
+            />
             <div class="file-capture-text-container">
               <img class="file-capture-image" src="./assets/bg_file_input.png" alt="upload icon" />
               <div class="file-capture-text">Upload file</div>
